@@ -1,0 +1,16 @@
+{% extends "registraion/base.html" %}
+{% block title %}Edit page{% endblock title %}
+{% block content %}
+<form method="POST" action='{% url 'edit-page' student_id %}'>
+    {% csrf_token %}
+    {{form.as_p}}
+      <button type="submit" class="btn btn-success">
+            💾 Update
+        </button>
+
+        <a href="{% url 'view-student' %}"
+           class="btn btn-secondary">
+           Cancel
+        </a>
+</form>
+{% endblock content %}

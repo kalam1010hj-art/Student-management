@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'registraion/registration.css' %}">
+</head>
+<body>
+    <div class="form-ctn">
+        <h1>Register</h1>
+
+        <hr>
+      
+    <form method="POST">
+        {% csrf_token %}
+      <div class="input-ctn">
+      <label for="nameId">First Name:</label>
+      <input type="text" id="nameId" required name='first_name'>
+      </div>
+      <div class="input-ctn">
+      <label for="lastnameId">Last Name:</label>
+      <input type="text" id="lastnameId" required name='last_name'>
+      </div>
+      <div class="input-ctn">
+      <label for="usernameId">Username:</label>
+      <input type="text" id="usernameId" required name='username'>
+      </div>
+      <div class="input-ctn">
+      <label for="emaiId">Email:</label>
+      <input type="email" id="emaiId" required name='email'>
+      </div>
+      <div class="input-ctn">
+      <label for="passwordId">Password:</label>
+      <input type="password" id="passwordId" required name='password'>
+      </div>
+       {% if messages %}
+      <div class='errors'>
+            <ul>
+        {% for message in messages %}
+        <p>{{message}}</p>
+       
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+      <button>Register</button>
+     
+ 
+    </form>
+   
+    <div class='login-class'>
+    <p>Already have account?</p>
+    <a href="">login</a>
+    </div>
+    
+</div>
+</body>
+</html>

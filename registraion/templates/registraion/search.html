@@ -1,0 +1,84 @@
+{% extends "registraion/base.html" %}
+
+{% block title %}View Students{% endblock %}
+
+{% block content %}
+
+<h3 class="mb-4">📋 All Students</h3>
+
+<!-- Search -->
+<form method="GET" class="d-flex w-50 mb-3" action='/search'>
+
+    <input type="text" name="q"
+           class="form-control me-2"
+           placeholder="Search by name">
+
+    <button class="btn btn-info">
+        Search
+    </button>
+
+</form>
+
+
+<!-- Students Table -->
+<div class="card shadow p-3">
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for s in student_data %}
+        <tr>
+
+            <td>{{ forloop.counter }}</td>
+            <td> <a href="{% url 'profile-page' s.id %}">{{ s.name }}</a></td>
+            <td>{{ s.email }}</td>
+            <td>{{ s.course }}</td>
+            <td>{{ s.phone }}</td>
+
+            <td>
+
+                <a href=""
+                   class="btn btn-warning btn-sm">
+                   ✏ Edit
+                </a>
+
+                <a href="{% url 'delete-student' s.id %}"
+                   class="btn btn-danger btn-sm"
+                   onclick="return confirm('Are you sure?')">
+                   🗑 Delete
+                </a>
+
+            </td>
+
+        </tr>
+    
+   
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center text-muted">
+                No Students Found
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

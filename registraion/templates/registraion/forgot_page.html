@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+
+    <!-- Optional CSS -->
+    <link rel="stylesheet" href="{% static 'registraion/login.css' %}">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Reset Password 🔐</h2>
+     {% if messages %}
+      <div class='errors'>
+            <ul>
+        {% for message in messages %}
+        <p>{{message}}</p>
+       
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+    <p class="subtitle">Enter your registered email</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Email -->
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+        </div>
+
+        <!-- Send Button -->
+        <button type="submit" class="login-btn">
+            Send Reset Link
+        </button>
+
+    </form>
+
+    <!-- Back to Login -->
+    <p class="signup-text">
+        Remembered your password?
+        <a href="{% url 'login-page' %}">Login</a>
+    </p>
+
+</div>
+
+</body>
+</html>

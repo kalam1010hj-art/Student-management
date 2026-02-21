@@ -1,0 +1,116 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page Background */
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Box */
+.login-container {
+    background: white;
+    width: 350px;
+    padding: 30px 25px;
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Title */
+.login-container h2 {
+    margin-bottom: 5px;
+}
+
+/* Subtitle */
+.subtitle {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* Input Box */
+.input-box {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+    font-size: 15px;
+}
+
+/* Input Focus */
+.input-box input:focus {
+    outline: none;
+    border-color: #4facfe;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+
+    background: #4facfe;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #2e8dfc;
+}
+
+/* Signup Text */
+.signup-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+.errors{
+    
+    padding: 10px;
+    color: red;
+    font-size:small;
+
+}
+
+.forgot{
+    margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+{% extends "registraion/base.html" %}
+{% load static%}
+{% block style %}
+<link rel="stylesheet" href="{% static 'registraion/add_student.css' %}">
+{% endblock style %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class='form-class'>
+    {% csrf_token %}
+
+  {% for field in form  %}
+  <div class='from-input-ctn'>
+    <div>
+    {{field.label_tag}}
+    </div>
+    <div>
+    {{field}}
+    </div>
+    <div class="error">
+    {{field.errors}}
+    </div>
+  </div>
+  {% endfor %}
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock content %}

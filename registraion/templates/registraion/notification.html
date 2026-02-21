@@ -1,0 +1,41 @@
+{% extends "registraion/base.html" %}
+
+{% block title %}Notification Details{% endblock %}
+
+{% block content %}
+
+<h3 class="mb-4">📢 Notification Details</h3>
+
+<div class="card shadow p-4">
+
+    <!-- Title -->
+    <h4 class="text-primary mb-3">
+        {{ notification.title }}
+    </h4>
+
+    <!-- Date -->
+    <p class="text-muted mb-2">
+        Posted on: {{ notification.created_at|date:"d M Y, h:i A" }}
+    </p>
+
+    <hr>
+
+    <!-- Message -->
+    <p style="font-size: 16px; line-height: 1.7;">
+        {{ notification.message }}
+    </p>
+    <img src='' width=100px>
+</div>
+
+<!-- Back Button -->
+<div class="mt-3">
+
+    <a href="{% url 'home-page' %}"
+       class="btn btn-secondary">
+
+        ⬅ Back to Notifications
+    </a>
+
+</div>
+
+{% endblock %}

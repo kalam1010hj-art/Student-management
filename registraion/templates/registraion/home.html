@@ -1,0 +1,183 @@
+{% extends "registraion/base.html" %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Welcome Section -->
+<div class="bg-primary text-white p-4 rounded mb-4">
+
+    <h2>Welcome to Student Dashboard 🎓</h2>
+    <p>Manage students, records, and activities easily.</p>
+
+</div>
+
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card text-center shadow p-3">
+            <h5>Total Students</h5>
+            <h2 class="text-primary">{{total_student}}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center shadow p-3">
+            <h5>Courses</h5>
+            <h2 class="text-success">6</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center shadow p-3">
+            <h5>New Admissions</h5>
+            <h2 class="text-warning">{{newAdmision}}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center shadow p-3">
+            <h5>Staff Members</h5>
+            <h2 class="text-danger">0</h2>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- College Banner -->
+<div class="card mb-4 shadow">
+    <div class="card-body text-center">
+
+        <h4>Our College Campus</h4>
+        <p>Excellence in Education & Innovation</p>
+
+    </div>
+
+</div>
+
+
+<!-- Notifications + Events -->
+<div class="row mb-4">
+
+    <!-- Notifications -->
+    <div class="col-md-6">
+
+        <div class="card shadow p-3">
+
+            <h5>🔔 Notifications</h5>
+            <hr>
+
+            <ul class="list-group">
+                {% for n in notifications  %}
+                 <a href="{% url 'notification-page' n.id %}">
+                    <li class="list-group-item">
+                   {{n.title}}
+                </li>
+                   </a>
+                {% endfor %}
+
+                
+
+                
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Events -->
+    <div class="col-md-6">
+
+        <div class="card shadow p-3">
+
+            <h5>📅 Upcoming Events</h5>
+            <hr>
+
+            <table class="table">
+
+                <tr>
+                    <td>Seminar on AI</td>
+                    <td>Feb 15</td>
+                </tr>
+
+                <tr>
+                    <td>Sports Meet</td>
+                    <td>Feb 20</td>
+                </tr>
+
+                <tr>
+                    <td>Placement Drive</td>
+                    <td>Mar 1</td>
+                </tr>
+
+                <tr>
+                    <td>Hackathon</td>
+                    <td>Mar 10</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Gallery Section -->
+<div class="card shadow p-3 mb-4">
+
+    <h5 class="mb-3">📸 Campus Gallery</h5>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                 class="img-fluid rounded shadow">
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b"
+                 class="img-fluid rounded shadow">
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+                 class="img-fluid rounded shadow">
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0"
+                 class="img-fluid rounded shadow">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Recent Activity -->
+<div class="card shadow p-3">
+
+    <h5>📌 Recent Activities</h5>
+    <hr>
+
+    <ul>
+
+        <li>Ravi added to Python course</li>
+        <li>Rahul updated email</li>
+        <li>Neha registered for AI</li>
+        <li>Admin deleted old record</li>
+
+    </ul>
+
+</div>
+
+
+{% endblock %}

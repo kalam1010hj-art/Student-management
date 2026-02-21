@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(135, 135, 230);
+}
+
+/* errors */
+.errors{
+    
+    padding: 10px;
+    color: red;
+    font-size:small;
+
+}
+
+
+
+.form-ctn{
+    border: 1px solid rgb(220, 219, 219);
+    border-radius: 5px;
+    width: 50%;
+    max-width: 350px;
+    
+    padding: 20px 30px;
+    margin: auto auto;
+   margin-top: 10px;
+   background-color: white;
+}
+.form-ctn h1{
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 5px;
+}
+.form-ctn hr{
+    margin-bottom: 15px;
+    width:50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    width: 350px;
+    margin: auto;
+    
+  
+    flex-wrap:wrap;
+    gap: 20px;
+ 
+}
+.input-ctn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+   
+    
+    padding-left: 10px;
+ 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.input-ctn input{
+ width:80%;
+ height: 25px;
+ padding:2px 5px;
+ 
+}
+.input-ctn label{
+    width: 100%;
+    margin-bottom:5px;
+}
+form button{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 120px;
+    padding: 8px 10px;
+    background-color: rgb(125, 216, 235);
+    border-radius: 9px;
+    border: 1px solid rgb(125, 216, 235);
+    font-size:15px;
+    font-weight: 700;
+}
+.login-class{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+    width: 80%;
+    margin:  20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+
+}
+.login-class a{
+    text-decoration: none;
+    color: blue;
+}

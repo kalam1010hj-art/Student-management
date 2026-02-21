@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'registraion/login.css' %}">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h2>Welcome Back 👋</h2>
+        <p class="subtitle">Login to continue</p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Username -->
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <!-- Password -->
+            <!-- Password -->
+<div class="input-box">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter password" required>
+</div>
+
+<!-- Forgot Password -->
+
+
+
+
+
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+            {% if messages %}
+      <div class='errors'>
+            <ul>
+        {% for message in messages %}
+        <p>{{message}}</p>
+       
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+        </form>
+        <div class="forgot-password forgot">
+    <a href="{% url "reset-password" %}">Forgot Password?</a>
+</div>
+
+        <!-- Signup Text -->
+        <p class="signup-text">
+            New to our website?  
+            <a href="{% url "registration-page" %}">Create an account</a>
+        </p>
+
+    </div>
+
+</body>
+</html>
